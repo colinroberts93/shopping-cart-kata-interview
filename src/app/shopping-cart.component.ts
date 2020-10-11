@@ -4,7 +4,7 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
   selector: "shopping-cart",
   template: `
     <h1>Shopping Cart ({{ calcTotal() }})</h1>
-    <h2>Total Cost £{{ calcPrice() }}</h2>
+    <h2>Total Cost £{{ calcPrice().toFixed(2) }}</h2>
     <cart-product
       *ngFor="let product of products"
       [product]="product"
@@ -22,11 +22,11 @@ export class ShoppingCartComponent {
   calcPrice() {
     return this.products.reduce((acc, prod) => {
       if (this.calcTotal() >= 10) {
-        return (acc += prod.price * prod.num * 0.5);
+        return (acc += prod.price.substring(1) * prod.num * 0.5);
       } else if (this.calcTotal() >= 5) {
-        return (acc += prod.price * prod.num * 0.75);
+        return (acc += prod.price.substring(1) * prod.num * 0.75);
       } else {
-        return (acc += prod.price * prod.num);
+        return (acc += prod.price.substring(1) * prod.num);
       }
     }, 0);
   }

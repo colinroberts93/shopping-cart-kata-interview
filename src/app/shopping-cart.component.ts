@@ -11,6 +11,10 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
       (productRemoved)="removeProduct($event)"
       ><cart-product> </cart-product
     ></cart-product>
+    <hr />
+    <button type="button" class="btn btn-primary btn-lg btn-block">
+      Check Out
+    </button>
   `
 })
 export class ShoppingCartComponent {

@@ -5,6 +5,11 @@ import { Component, OnInit } from "@angular/core";
   template: `
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <a class="navbar-brand" href="#">Shopping Cart Demo</a>
+      <ul class="nav navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sign Out</a>
+        </li>
+      </ul>
     </nav>
     <div class="container">
       <div class="jumbotron">

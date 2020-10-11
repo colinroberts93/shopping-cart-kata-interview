@@ -6,6 +6,7 @@ import { Component, Input, Output, EventEmitter } from "@angular/core";
       <div class="card-body">
         <div *ngIf="product">
           <h5 class="card-title">{{ product.name }}</h5>
+          <h6 class="card-title">{{ product.description }}</h6>
           <p class="card-text">
             {{
               product.price.toLocaleString("en-UK", {

@@ -1,4 +1,7 @@
 import { Component } from "@angular/core";
+import { HttpClient, HttpParams } from "@angular/common/http";
+import { Product } from "./products";
+import { Observable } from "rxjs/Observable";
 
 @Component({
   selector: "my-app",
@@ -6,16 +9,26 @@ import { Component } from "@angular/core";
   styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-  productList = [
-    { name: "item one", price: 10 },
-    { name: "item two", price: 20 },
-    { name: "item three", price: 30 }
-  ];
+  readonly ROOT_URL = "https://my.api.mockaroo.com/test.json?key=373c6a30";
+  products: Observable<Product[]>;
+  constructor(private http: HttpClient) {
+    this.getProducts();
+  }
+
+  getProducts() {
+    this.products = this.http
+      .get<Product[]>(this.ROOT_URL)
+      .subscribe(result => {
+        this.productList = result;
+      });
+  }
+
+  productList = [];
   cartProductList = [];
-  
+
   addProductToCart(product) {
     const productExistInCart = this.cartProductList.find(
-      ({ name }) => name === product.name
+      productInCart => productInCart.name === product.name
     );
     if (!productExistInCart) {
       this.cartProductList.push({ ...product, num: 1 });

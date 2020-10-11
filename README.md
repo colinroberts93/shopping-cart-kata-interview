@@ -1,6 +1,6 @@
 # shopping-cart-kata-interview
 
-This is a application built for the keoghs interview process.
+This is an application built for the keoghs interview process.
 
 I have used an API that I created before the challenge which is from a website called mockaroo, I only have a free version therefore only so many requests are allowed per day. If the items dont appear when the page has been loaded then it could be that we have gone over the limit for the day. (just let me know and i can swap the api link)
 

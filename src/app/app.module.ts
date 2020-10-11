@@ -7,6 +7,8 @@ import { ProductListComponent } from "./product-list.component";
 import { ShoppingCartComponent } from "./shopping-cart.component";
 import { ProductComponent } from "./product.component";
 import { CartProductComponent } from "./cart-product.component";
+import { HeaderComponent } from "./header.component";
+import { FooterComponent } from "./footer.component";
 
 @NgModule({
   imports: [BrowserModule, FormsModule],
@@ -15,7 +17,9 @@ import { CartProductComponent } from "./cart-product.component";
     ProductListComponent,
     ShoppingCartComponent,
     ProductComponent,
-    CartProductComponent
+    CartProductComponent,
+    HeaderComponent,
+    FooterComponent
   ],
   bootstrap: [AppComponent]
 })
